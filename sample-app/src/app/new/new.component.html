@@ -1,0 +1,55 @@
+<a class="nav-link" [routerLink] = "['']"> Home</a>
+
+
+<p>Add a New Quotable author:</p>
+<h1></h1>
+<!-- <p class="small text-danger">{{err?.name?.message}}</p> -->
+
+
+
+<form (submit)="onSubmit()" name="myForm" >
+    <div class="form-group">
+        <label for="">Pet Name</label>
+        <p class="small text-danger" *ngIf ="name.errors  && !name.pristine" >Must be 3 characters long</p>
+        <input type="text" class="form-control w-50" name="newProd.name" [(ngModel)]="newProd.name" required minlength= "3" #name="ngModel">
+        <p class="small text-danger">{{err?.name?.message}}</p>
+    </div>
+    <div class="form-group">
+        <label for="">Pet Type</label>
+        <p class="small text-danger"  *ngIf ="type.errors  && !type.pristine" >Must be 3 characters long</p>
+        <input type="text" class="form-control w-50" name="newProd.type" [(ngModel)]="newProd.type" required minlength= "3" #type="ngModel">
+        <p class="small text-danger">{{err?.type?.message}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="">Description</label>
+        <p class="small text-danger" *ngIf ="description.errors  && !description.pristine" >Must be 3 characters long</p>
+        <input type="text" class="form-control w-50" name="newProd.description" [(ngModel)]="newProd.description" required minlength= "3" #description="ngModel">
+        <p class="small text-danger">{{err?.description?.message}}</p>
+    </div>
+
+
+
+    <h3>Skills:</h3>
+    <div class="form-group">
+        <label for="">Skill 1:</label>
+        <p class="small text-danger" >{{err?.skill_one.message}}</p>
+        <input type="text" class="form-control w-50" name="newProd.skill_one" [(ngModel)]="newProd.skill_one">
+    </div>
+    <div class="form-group">
+        <label for="">Skill 2:</label>
+        <p class="small text-danger" >{{err?.skill_two.message}}</p>
+        <input type="text" class="form-control w-50" name="newProd.skill_two" [(ngModel)]="newProd.skill_two">
+    </div>
+    <div class="form-group">
+        <label for="">Skill 3:</label>
+        <p class="small text-danger" >{{err?.skill_three.message}}</p>
+        <input type="text" class="form-control w-50" name="newProd.skill_three" [(ngModel)]="newProd.skill_three">
+    </div>
+    <button *ngIf ="!name.errors && !type.errors && !description.errors" class="btn btn-primary btn-sm" type="submit"  >Add Pet</button>
+    <button disabled *ngIf ="name.errors || type.errors || description.errors" style="color:grey" class="btn btn-primary btn-sm" type="submit"  >Add Pet</button>
+    <a   class="btn btn-danger btn-sm text-white " [routerLink] = "['']" style="margin-left: 15px;">Cancel</a>
+
+
+
+</form>

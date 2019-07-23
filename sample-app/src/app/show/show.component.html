@@ -1,0 +1,49 @@
+<a class="nav-link" [routerLink] = "['']" style="float:right;" > Home</a>
+
+
+<h3>Details about {{showProd.name}}</h3>
+
+
+
+<!-- <div class="row" >
+    <div class="col-4 col-sm-6" >
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">Pet Type: {{showProd.type}}</p>
+                <p class="card-text">Description:{{showProd.description}}</p>
+                <p class="card-text">Skills:{{showProd.skill_one}} <br> {{showProd.skill_two}} <br> {{showProd.skill_three}}</p>
+                <p class="card-text" >Likes: 3 </p>
+                <a [routerLink] = "" class="btn btn-primary btn-sm">Like this pet</a>
+                <a (click)="onDelete(showProd._id)" class="btn btn-danger btn-sm text-white" style="margin-left: 15px;" >Adopt this pet!</a>
+            </div>
+        </div>
+    </div>
+</div>  -->
+
+<table class="table table-striped" >
+        <thead >
+          <tr>
+            <th scope="col">Pet Type:</th>
+            <th scope="col">Description: </th>
+            <th scope="col">Skills:</th>
+            <th scope="col">Likes:</th>
+            <th scope="col">Actions:</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr>
+            <td>{{showProd.type}}</td>
+            <td>{{showProd.description}}</td>
+            <td >
+                <p>{{showProd.skill_one}}</p>
+                <p>{{showProd.skill_two}}</p>
+                <p>{{showProd.skill_three}}</p> 
+            <td>3</td>
+            <td>               
+                <a [routerLink] = "" class="btn btn-primary btn-sm">Like this pet</a>
+                <a (click)="onDelete(showProd._id)" class="btn btn-danger btn-sm text-white" style="margin-left: 15px;" >Adopt this pet!</a>
+            </td>
+          </tr>
+    
+        </tbody>
+      </table>
